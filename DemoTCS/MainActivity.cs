@@ -5,6 +5,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace DemoTCS
 {
@@ -15,6 +18,9 @@ namespace DemoTCS
 
         protected override void OnCreate(Bundle bundle)
         {
+            MobileCenter.Start("557d3701-c8d0-455b-8b76-add0e4d67203",
+                   typeof(Analytics), typeof(Crashes));
+
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
